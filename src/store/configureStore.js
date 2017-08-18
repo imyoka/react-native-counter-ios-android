@@ -1,17 +1,20 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import ReduxPromise from 'redux-promise'
+import ReduxThunk from 'redux-thunk'
+import { logger } from '../middleware'
 import { composeWithDevTools } from 'remote-redux-devtools';
-import reducer from '../reducers';
+import rootReducer from '../reducers';
 
+const isDebuggingInBrowser = __DEV__ && !!window.navigator.userAgent;
 
 export default function configureStore(initialState) {
-  const store = createStore(
-    reducer,
-    initialState,
-    composeWithDevTools(
-      applyMiddleware(thunk),
-    )
-  );
+  const createStoreWithMiddleware = applyMiddleware(
+    ReduxThunk,
+    ReduxPromise,
+    logger
+  )(createStore)
+  
+  const store = createStoreWithMiddleware(rootReducer, initialState);
 
   if (module.hot) {
     // Enable hot module replacement for reducers
@@ -19,6 +22,10 @@ export default function configureStore(initialState) {
       const nextRootReducer = require('../reducers/index').default;
       store.replaceReducer(nextRootReducer);
     });
+  }
+
+  if (isDebuggingInBrowser) {
+    window.store = store;
   }
 
   return store;

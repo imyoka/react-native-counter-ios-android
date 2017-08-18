@@ -1,12 +1,18 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
+import { handleActions } from 'redux-actions'
 
-export default function counter(state = 0, action) {
-  switch (action.type) {
-  case INCREMENT_COUNTER:
-    return state + 1;
-  case DECREMENT_COUNTER:
-    return state - 1;
-  default:
-    return state;
-  }
-};
+const initialState = 0
+
+export default handleActions({
+    'INCREMENT_COUNTER': {
+      next: (state, action) => state + 1 ,
+      throw: (state, action) => {
+        console.log('error', action);
+      }
+    },
+    'DECREMENT_COUNTER': {
+      next: (state, action) => state - 1 ,
+      throw: (state, action) => {
+        console.log('error', action);
+      }
+    }
+}, initialState)

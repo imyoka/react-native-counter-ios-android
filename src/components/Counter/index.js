@@ -11,7 +11,8 @@ import {
 
 class Counter extends Component {
   render() {
-    var { increment, incrementIfOdd, incrementAsync, decrement, decrementAsync, counter } = this.props;
+    var { counter } = this.props.screenProps;
+    var { increment, incrementIfOdd, incrementAsync, decrement, decrementAsync } = this.props.screenProps.actions;
     return (
       <View style={styles.container}>
         <View style={styles.displayPanel}>
@@ -43,15 +44,6 @@ class Counter extends Component {
     );
   }
 }
-
-Counter.propTypes = {
-  increment: PropTypes.func.isRequired,
-  incrementIfOdd: PropTypes.func.isRequired,
-  incrementAsync: PropTypes.func.isRequired,
-  decrementAsync: PropTypes.func.isRequired,
-  decrement: PropTypes.func.isRequired,
-  counter: PropTypes.number.isRequired
-};
 
 const colors = {
   background: {
