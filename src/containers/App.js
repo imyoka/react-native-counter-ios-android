@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { BackAndroid } from 'react-native';
+import { BackAndroid, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationActions, addNavigationHelpers } from 'react-navigation/src/react-navigation';
 import Counter from '../components/Counter';
@@ -20,7 +20,8 @@ class AppWithNavigationState extends Component {
       }
 
       render() {
-        return <AppNavigator screenProps={this.props} />;
+        const prefix = Platform.OS == 'android' ? 'mychat://mychat/' : 'mychat://';
+        return <AppNavigator uriPrefix={prefix} screenProps={this.props} />;
       }
 }
 

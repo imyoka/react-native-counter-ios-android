@@ -8,11 +8,19 @@ import rootReducer from '../reducers';
 const isDebuggingInBrowser = __DEV__ && !!window.navigator.userAgent;
 
 export default function configureStore(initialState) {
-  const createStoreWithMiddleware = applyMiddleware(
-    ReduxThunk,
-    ReduxPromise,
-    logger
-  )(createStore)
+  let createStoreWithMiddleware = null;
+  if (__DEV__) {
+    createStoreWithMiddleware = applyMiddleware(
+      ReduxThunk,
+      ReduxPromise,
+      logger
+    )(createStore)
+  } else {
+    createStoreWithMiddleware = applyMiddleware(
+      ReduxThunk,
+      ReduxPromise
+    )(createStore)
+  }
   
   const store = createStoreWithMiddleware(rootReducer, initialState);
 

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+// import SplashScreen from 'react-native-splash-screen';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,8 +22,17 @@ const styles = StyleSheet.create({
 });
 
 export default class Home extends Component {
+  static navigationOptions = ({navigation}) => {
+      return {
+        tabBarLabel: '上课3',
+        headerTitle: '上课1',
+      };
+  };
   static propTypes = {
     navigation: PropTypes.object.isRequired
+  };
+  componentDidMount() {
+    // SplashScreen.hide();
   };
 
   toCounter = () => {

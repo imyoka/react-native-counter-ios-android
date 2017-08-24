@@ -7,8 +7,11 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
+// Add the header at the top of the file start, link: https://reactnavigation.org/docs/guides/linking
+#import "RCTLinkingManager.h"
+// Add the header at the top of the file end
+#import "SplashScreen.h"  // link: https://github.com/crazycodeboy/react-native-splash-screen
 #import "AppDelegate.h"
-
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
 
@@ -31,7 +34,16 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [SplashScreen show];  // link: https://github.com/crazycodeboy/react-native-splash-screen
   return YES;
+}
+
+// Add this above the `@end`:
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  return [RCTLinkingManager application:application openURL:url
+                      sourceApplication:sourceApplication annotation:annotation];
 }
 
 @end
