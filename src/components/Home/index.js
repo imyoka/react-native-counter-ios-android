@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-// import SplashScreen from 'react-native-splash-screen';
+import SplashScreen from 'react-native-splash-screen';
 
 const styles = StyleSheet.create({
   container: {
@@ -42,18 +42,24 @@ export default class Home extends Component {
   toWelcome = () => {
     this.props.navigation.navigate('Welcome');
   }
+  toVideo = () => {
+    this.props.navigation.navigate('Video');
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native Boilerplate!
+          Welcome to Alichs Boilerplate!
         </Text>
         <TouchableOpacity onPress={this.toCounter}>
           <Text style={styles.instructions}>Navigate to Counter</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toWelcome}>
           <Text style={styles.instructions}>Navigate to Welcome</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.toVideo}>
+          <Text style={styles.instructions}>Navigate to Video</Text>
         </TouchableOpacity>
       </View>
     );

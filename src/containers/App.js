@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { BackAndroid, Platform } from 'react-native';
+import { BackHandler, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationActions, addNavigationHelpers } from 'react-navigation/src/react-navigation';
 import Counter from '../components/Counter';
@@ -9,7 +9,7 @@ import * as CounterActions from '../actions/counter';
 
 class AppWithNavigationState extends Component {
       componentDidMount() {
-        this.backHandler = BackAndroid.addEventListener('backPress', () => {
+        this.backHandler = BackHandler.addEventListener('backPress', () => {
           this.props.dispatch(NavigationActions.back());
           return true;
         });

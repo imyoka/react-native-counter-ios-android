@@ -14,6 +14,7 @@ import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyl
 import Home from './components/Home';
 import Counter from './components/Counter';
 import Welcome from './components/Welcome'
+import Video from './components/Video'
 import Tabs from './components/Tabs'
 
 const navigationOptions = {
@@ -47,6 +48,9 @@ const AppNavigator = new StackNavigator(
         // header: null
       }
     },
+    Video: {
+      screen: Video,
+    }
   },
   {
     headerMode: 'screen',
