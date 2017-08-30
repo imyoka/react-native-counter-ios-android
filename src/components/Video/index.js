@@ -1,6 +1,13 @@
-import React, { Component, PropTypes } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image
+} from 'react-native';
 import { NavigationActions, addNavigationHelpers } from 'react-navigation/src/react-navigation';
+import { Flex, WingBlank, WhiteSpace, Button, Icon, DatePicker } from 'antd-mobile';
 import Video from 'react-native-video';
 
 const styles = StyleSheet.create({
@@ -38,7 +45,7 @@ export default class VideoPage extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to Alichs Boilerplate!
+          Welcome to Alichs Video Boilerplate!
         </Text>
         <View style={styles.backgroundVideo}>
           <Video source={{uri: "https://yxs-video-test.oss-cn-beijing.aliyuncs.com/469694695/video_sd.mp4"}}
@@ -53,6 +60,16 @@ export default class VideoPage extends Component {
                        repeat={true}
                        style={styles.backgroundVideo} />
           </View>
+          <Flex justify="center">
+            <Image source={{uri: 'https://img3.doubanio.com/icon/u3490872-3.jpg'}} style={{width: 100, height: 100}}></Image>
+            <Image source={{uri: 'https://img3.doubanio.com/icon/u3490872-3.jpg'}} style={{width: 100, height: 100}}></Image>
+            <Image source={{uri: 'https://img3.doubanio.com/icon/u3490872-3.jpg'}} style={{width: 100, height: 100}}></Image>
+          </Flex>
+          <Flex justify="center">
+            <Flex.Item><WingBlank><Button type="warning">开始玩耍</Button></WingBlank></Flex.Item>
+            <Flex.Item><WingBlank><Button type="primary">开始玩耍</Button></WingBlank></Flex.Item>
+            <Flex.Item><WingBlank><Button type="primary">开始玩耍</Button></WingBlank></Flex.Item>
+          </Flex>
       </View>
     );
   }
