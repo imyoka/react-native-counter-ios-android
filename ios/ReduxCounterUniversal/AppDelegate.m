@@ -8,10 +8,10 @@
  */
 
 #import "AppDelegate.h"
-
+#import <React/RCTLinkingManager.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-// #import "SplashScreen.h"  // here
+#import "SplashScreen.h"  // here
 #import <AVFoundation/AVFoundation.h>  // import
 
 @implementation AppDelegate
@@ -33,9 +33,17 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  // [SplashScreen show];  // here
+  [SplashScreen show];  // here
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];  // allow
   return YES;
+}
+
+// Deep link
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  return [RCTLinkingManager application:application openURL:url
+                      sourceApplication:sourceApplication annotation:annotation];
 }
 
 @end

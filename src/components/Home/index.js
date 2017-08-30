@@ -32,7 +32,7 @@ export default class Home extends Component {
     navigation: PropTypes.object.isRequired
   };
   componentDidMount() {
-    // SplashScreen.hide();
+    SplashScreen.hide();
   };
 
   toCounter = () => {
