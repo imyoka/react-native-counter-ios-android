@@ -50,6 +50,9 @@ const AppNavigator = new StackNavigator(
     },
     Video: {
       screen: Video,
+      navigationOptions: {
+        header: null
+      }
     }
   },
   {

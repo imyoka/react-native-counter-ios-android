@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { NavigationActions, addNavigationHelpers } from 'react-navigation/src/react-navigation';
 import Video from 'react-native-video';
 
 const styles = StyleSheet.create({
@@ -16,6 +17,7 @@ const styles = StyleSheet.create({
     right: 0,
     height: 180,
     backgroundColor: 'steelblue',
+    display: 'flex'
   },
   welcome: {
     color: '#ff9100'
@@ -39,7 +41,7 @@ export default class VideoPage extends Component {
           Welcome to Alichs Boilerplate!
         </Text>
         <View style={styles.backgroundVideo}>
-          <Video source={{uri: "http://yxs-video-test.oss-cn-beijing.aliyuncs.com/469694695/video_sd.mp4"}}
+          <Video source={{uri: "https://yxs-video-test.oss-cn-beijing.aliyuncs.com/469694695/video_sd.mp4"}}
                        ref={ (ref) => { this.player = ref } }
                        rate={1.0}
                        volume={1.0}
@@ -48,8 +50,9 @@ export default class VideoPage extends Component {
                        resizeMode="cover"
                        playInBackground={true}
                        playWhenInactive={true}
-                       repeat={true} />
-        </View>
+                       repeat={true}
+                       style={styles.backgroundVideo} />
+          </View>
       </View>
     );
   }
