@@ -66,7 +66,8 @@ export default class VideoPage extends Component {
             <Image source={{uri: 'https://img3.doubanio.com/icon/u3490872-3.jpg'}} style={{width: 100, height: 100}}></Image>
           </Flex>
           <Flex justify="center">
-            <Flex.Item><WingBlank><Button type="warning">开始玩耍</Button></WingBlank></Flex.Item>
+            <Icon type='left' size='md' />
+            <Flex.Item><WingBlank><Button type="warning" style={{borderRadius: 20}}>开始玩耍</Button></WingBlank></Flex.Item>
             <Flex.Item><WingBlank><Button type="primary">开始玩耍</Button></WingBlank></Flex.Item>
             <Flex.Item><WingBlank><Button type="primary">开始玩耍</Button></WingBlank></Flex.Item>
           </Flex>
