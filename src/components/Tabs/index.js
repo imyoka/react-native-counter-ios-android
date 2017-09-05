@@ -5,24 +5,45 @@ import {
   Text,
   WebView,
   TouchableOpacity } from 'react-native';
+// import { Flex, WingBlank, WhiteSpace, Icon, DatePicker } from 'antd-mobile';
 import { TabNavigator } from 'react-navigation';
 
 import Home from '../Home';
 import Counter from '../Counter';
 import Welcome from '../Welcome'
+// import CourseTabPage from '../Course'
 
 const AppTab = new TabNavigator({
+    // Course: {
+    //     screen: CourseTabPage,
+    //     navigationOptions:{
+    //         tabBarLabel: '上课',
+    //         headerTitle: '上课',
+    //         headerStyle: { backgroundColor:'#fff', shadowOpacity: 0, elevation: 0 },
+    //         headerLeft: <TouchableOpacity onPress={ ()=> shareSNS() }><Flex justify="center" style={{
+    //             width: 40,
+    //             height: 40,
+    //             borderRadius: 20,
+    //             borderWidth: 1,
+    //             borderColor: 'white',
+    //             backgroundColor: 'rgba(0,0,0, 0.4)',}} onPress={ ()=> this.props.navigation.goBack() }>
+    //         <Icon type='search' size='xxs' color='white'/>
+    //       </Flex></TouchableOpacity>,
+    //     },
+    // },
     Home: {
         screen: Home,
         navigationOptions:{
-            tabBarLabel: '上课',
+            tabBarLabel: '练习',
+            headerTitle: '练习',
+            headerTitleStyle: { fontSize: 16, fontFamily: 'Arial', alignSelf:'center' },
         },
     },
     Counter: {
         screen: Counter,
         navigationOptions:{
-            tabBarLabel: '练习',
-            headerTitle: '练习',
+            tabBarLabel: '我的',
+            headerTitle: '我的',
         },
     },
     // Welcome: {

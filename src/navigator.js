@@ -12,10 +12,12 @@ import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyl
 
 
 import Home from './components/Home';
+import Course from './components/Course';
 import Counter from './components/Counter';
 import Welcome from './components/Welcome'
 import Video from './components/Video'
 import Tabs from './components/Tabs'
+import IconView from './components/IconView'
 
 const navigationOptions = {
   navigationOptions: {
@@ -28,7 +30,9 @@ const navigationOptions = {
 
 const AppNavigator = new StackNavigator(
   {
+    Course: { screen: Tabs },
     Home: { screen: Tabs, ...navigationOptions },
+    Icon: { screen: IconView },
     Welcome: {
       screen: Welcome,
       path: 'mychat/welcome',

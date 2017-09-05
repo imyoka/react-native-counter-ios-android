@@ -45,6 +45,9 @@ export default class Home extends Component {
   toVideo = () => {
     this.props.navigation.navigate('Video');
   }
+  toICON = () => {
+    this.props.navigation.navigate('Icon');
+  }
 
   render() {
     return (
@@ -60,6 +63,9 @@ export default class Home extends Component {
         </TouchableOpacity>
         <TouchableOpacity onPress={this.toVideo}>
           <Text style={styles.instructions}>Navigate to Video</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.toICON}>
+          <Text style={styles.instructions}>Navigate to ICON</Text>
         </TouchableOpacity>
       </View>
     );

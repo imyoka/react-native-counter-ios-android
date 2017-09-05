@@ -8,8 +8,6 @@
 		"bundle-android": "react-native bundle –platform android –dev false –entry-file index.android.js –bundle-output android/app/src/main/assets/index.android.bundle –sourcemap-output android/app/src/main/assets/index.android.map –assets-dest android/app/src/main/res/"
 	},
 	"dependencies": {
-		"antd-mobile": "^1.4.0",
-		"react-dom": "^15.6.1",
 		"react": "16.0.0-alpha.12",
 		"react-native": "^0.47.2",
 		"react-native-splash-screen": "^3.0.0",
@@ -20,16 +18,29 @@
 		"redux-actions": "^2.2.1",
 		"redux-promise": "^0.5.3",
 		"redux-thunk": "^2.1.0",
-		"remote-redux-devtools": "^0.5.5"
+		"remote-redux-devtools": "^0.5.5",
+		"teaset": "^0.3.2"
+	},
+	"rn-config": {
+		"directories": {
+			"dist": "dist",
+			"src": "."
+		}
 	},
 	"devDependencies": {
 		"babel-jest": "17.0.2",
-		"babel-plugin-import": "^1.2.1",
-		"babel-plugin-transform-runtime": "^6.23.0",
 		"babel-preset-react-native": "1.9.0",
+		"co": "^4.6.0",
+		"co-fs": "^1.2.0",
+		"coffee-script": "^1.12.7",
+		"gulp": "^3.9.1",
 		"jest": "17.0.3",
 		"jest-react-native": "17.1.0",
-		"react-test-renderer": "16.0.0-alpha.12"
+		"react-native-svg": "^5.4.1",
+		"react-native-svg-uri": "^1.2.1",
+		"react-test-renderer": "16.0.0-alpha.12",
+		"require-dir": "^0.3.2",
+		"run-sequence": "^2.1.0"
 	},
 	"jest": {
 		"preset": "react-native"
