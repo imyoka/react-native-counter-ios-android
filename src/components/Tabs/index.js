@@ -8,6 +8,7 @@ import {
 // import { Flex, WingBlank, WhiteSpace, Icon, DatePicker } from 'antd-mobile';
 import { TabNavigator } from 'react-navigation';
 
+import Svg from '../UC/Svg';
 import Home from '../Home';
 import Counter from '../Counter';
 import Welcome from '../Welcome'
@@ -37,6 +38,7 @@ const AppTab = new TabNavigator({
             tabBarLabel: '练习',
             headerTitle: '练习',
             headerTitleStyle: { fontSize: 16, fontFamily: 'Arial', alignSelf:'center' },
+            tabBarIcon: <Svg icon="play2" size="20" fill="#black"/>,
         },
     },
     Counter: {
@@ -44,6 +46,7 @@ const AppTab = new TabNavigator({
         navigationOptions:{
             tabBarLabel: '我的',
             headerTitle: '我的',
+            tabBarIcon: <Svg icon="pause" size="20" fill="#black"/>,
         },
     },
     // Welcome: {
@@ -62,13 +65,18 @@ const AppTab = new TabNavigator({
     animationEnabled:false, //是否在更改标签时显示动画。
     tabBarOptions: {
         style: {
-            height:49
+            height:60,
+            backgroundColor: 'white'
+        },
+        indicatorStyle: {
+            height: 0
         },
         activeBackgroundColor:'white',
         activeTintColor:'#4ECBFC',
         inactiveBackgroundColor:'white',
         inactiveTintColor:'#aaa',
         showLabel:true,
+        showIcon: true,
     }
 });
 

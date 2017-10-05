@@ -10,6 +10,7 @@ gulp.task 'svg', ->
         svgJson = {}
         svgList = yield fs.readdir config.SVG
         for svg in svgList
+            
             svgFile = yield fs.readFile path.join(config.SVG, svg), 'utf8'
             svgName = svg.replace '.svg', ''
             svgJson[svgName] = svgFile

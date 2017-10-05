@@ -68,6 +68,10 @@ export default class IconView extends Component {
     return (
       <View style={styles.container}>
         <Svg icon="play2" size="40" fill="#black"/>
+        <Svg icon="stop" size="40" fill="#black"/>
+        <Svg icon="search" size="40" fill="#black"/>
+        <Svg icon="backward" size="40" fill="#black"/>
+        <Svg icon="next" size="40" fill="#black"/>
       </View>
     );
   }
