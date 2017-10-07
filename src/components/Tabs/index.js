@@ -38,7 +38,7 @@ const AppTab = new TabNavigator({
             tabBarLabel: '练习',
             headerTitle: '练习',
             headerTitleStyle: { fontSize: 16, fontFamily: 'Arial', alignSelf:'center' },
-            tabBarIcon: <Svg icon="play2" size="20" fill="#black"/>,
+            tabBarIcon: <Svg icon="play2" size="20" color="#ff9100"/>,
         },
     },
     Counter: {
@@ -46,7 +46,7 @@ const AppTab = new TabNavigator({
         navigationOptions:{
             tabBarLabel: '我的',
             headerTitle: '我的',
-            tabBarIcon: <Svg icon="pause" size="20" fill="#black"/>,
+            tabBarIcon: <Svg icon="pause" size="20" color="black"/>,
         },
     },
     // Welcome: {

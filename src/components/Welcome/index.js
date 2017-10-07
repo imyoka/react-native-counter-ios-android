@@ -12,7 +12,7 @@ import {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const url = "https://web.hundun.cn/devRepo/Alichs/research_value_share/extension.html?name=%E4%BD%95%E8%8C%B9%E8%90%8D%E4%BD%95%E8%8C%B9%E8%90%8D&uid=feae553bc657cc5895767d7db4a23026"; 
+const url = "https://web.hundun.cn/testRepo/htmlBin/research_value_share/extension.html?name=%E4%BD%95%E8%8C%B9%E8%90%8D%E4%BD%95%E8%8C%B9%E8%90%8D&uid=feae553bc657cc5895767d7db4a23026"; 
 const {width, height} = Dimensions.get('window'); 
 
 const styles = StyleSheet.create({
