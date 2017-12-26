@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import Svg from '../UC/Svg';
 
 const styles = StyleSheet.create({
   container: {
