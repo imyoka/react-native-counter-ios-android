@@ -38,7 +38,7 @@ const AppTab = new TabNavigator({
             tabBarLabel: '练习',
             headerTitle: '练习',
             headerTitleStyle: { fontSize: 16, fontFamily: 'Arial', alignSelf:'center' },
-            tabBarIcon: <Svg icon="play2" size="20" fill="#black"/>,
+            tabBarIcon: ({focused}) => <Svg icon="play2" size="20" color={focused?"#ff9100":"grey"}/>,
         },
     },
     Counter: {
@@ -46,7 +46,7 @@ const AppTab = new TabNavigator({
         navigationOptions:{
             tabBarLabel: '我的',
             headerTitle: '我的',
-            tabBarIcon: <Svg icon="pause" size="20" fill="#black"/>,
+            tabBarIcon: ({focused}) => <Svg icon="pause" size="20" color={focused?"#ff9100":"grey"}/>,
         },
     },
     // Welcome: {
@@ -72,9 +72,9 @@ const AppTab = new TabNavigator({
             height: 0
         },
         activeBackgroundColor:'white',
-        activeTintColor:'#4ECBFC',
+        activeTintColor:'#ff9100',
         inactiveBackgroundColor:'white',
-        inactiveTintColor:'#aaa',
+        inactiveTintColor:'grey',
         showLabel:true,
         showIcon: true,
     }
